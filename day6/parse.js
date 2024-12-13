@@ -7,6 +7,7 @@ function parse (path) {
   lines.forEach(line => {
     res.push(line.split(''))
   })
+  res.pop()
   return res;
 }
 
