@@ -7,5 +7,5 @@ This advent of code is solely focused on solving the problems
 presented with code, any means necessary. 
 
 
-Maybe next years advent can include the challabgr of writing
-modular, flexible and easily understandable code. 
+Maybe next years advent can include the challange of writing
+modular, flexible, and easily understandable code. 
