@@ -6,7 +6,7 @@ const sample = parse(samplePath);
 const data = parse(path);
 
 function traverseMap(map) {
-
+    console.time()
     // Find 'me'
     let directions = [[-1,0],[0,1],[1,0],[0,-1]];
     let dir = 0
@@ -22,8 +22,6 @@ function traverseMap(map) {
             }
         }
     }
-    
-    console.log('w ',w,'h ', h)
     // start traversal
     while (true) {
         map[me[0]][me[1]] = 'X';
@@ -49,8 +47,8 @@ function traverseMap(map) {
     const rowJoiner = process.platform === 'win32' ? '\r\n' : '\n';
 
     let txtMap = map.map(row => row.join('')).join(rowJoiner)
-    console.log(txtMap)
     console.log(`traversed ${visited.size} unique positions`)
+    console.timeEnd()
 }
 
 traverseMap(sample)
