@@ -8,8 +8,8 @@ const data = parse(path)
 
 function main(array) {
     console.time('main')
-    let data = transformData(array).data
-    let res = checkSum(shiftMemory(data))
+    let data = shiftMemory(transformData(array))
+    let res = checkSum(data)
     console.timeEnd('main')
     return res
 }
@@ -28,26 +28,21 @@ function checkSum(array) {
     return checkSum
 }
 
-function shiftMemory(array) {
+function shiftMemory(object) {
     console.time('shiftMemory')
+    let array = object.data
     let length = array.length - 1;
-    //let j = 0
+    let j = 0
     for (let i = length; i >= 0; i--) {
-        
-        if ( array[i] === '.') {
+        let fileId = array[i]
+        if ( fileId === '.') {
             continue;
         };
-        let j = 0
-        while (true) {
-            if (array[j] === '.') break;
-            j++;
-        };
-        let t = array[j];
-        if (i < j) {
-            break;
-        }
-        array[j] = array[i];
-        array[i] = t;
+        let size = object.inventory[fileId]
+
+        //findContigousFamily(array, size)
+        i -= Number(size);
+        console.log('file: ', fileId,' size: ', fileId < 10 ? ` ${size}` : size)
     }
     console.timeEnd('shiftMemory')
     return array;
