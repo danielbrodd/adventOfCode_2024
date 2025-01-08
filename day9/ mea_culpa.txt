@@ -1,0 +1,12 @@
+I could not solve the part 2 of this problem on my own. I had to resort to flat out stealing another
+solution.
+
+Where i got stuck was on how top terminate moving data once all available slots where filled.
+
+With current solution (main_part_two.js) it goes down to index 0 and there fore scrambles already made work.
+If i change it to length/2 (half way point) it is not optimized and several data sets that should be moved are not.
+
+I will maybe come back to the problem and work out a "skip" feature so that if the data set has already been processed,
+it should not be handled again, like a cache feature. alternatively i could enqueue all indexes that are to be moved as a whole and the process the queue instead. I will not hover resolve this blunder at this point.
+
+/Daniel
